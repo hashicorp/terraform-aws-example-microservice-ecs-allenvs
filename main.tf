@@ -28,11 +28,11 @@ module "dev" {
 
   # Existing infrastructure
   aws_region       = "us-east-1"
-  vpc_id           = data.terraform_remote_state.aws-example-network-dev-us-east-1.outputs.vpc_id
-  public_subnets   = data.terraform_remote_state.aws-example-network-dev-us-east-1.outputs.private_subnets
-  private_subnets  = data.terraform_remote_state.aws-example-network-dev-us-east-1.outputs.public_subnets
-  ecs_cluster_name = data.terraform_remote_state.aws-example-microservice-infra-dev-us-east-1.outputs.ecs_cluster_name
-  log_group_name   = data.terraform_remote_state.aws-example-microservice-infra-dev-us-east-1.outputs.log_group_name
+  vpc_id           = data.terraform_remote_state.aws-example-network.outputs.vpc_id
+  public_subnets   = data.terraform_remote_state.aws-example-network.outputs.private_subnets
+  private_subnets  = data.terraform_remote_state.aws-example-network.outputs.public_subnets
+  ecs_cluster_name = data.terraform_remote_state.aws-example-microservice-infra.outputs.ecs_cluster_name
+  log_group_name   = data.terraform_remote_state.aws-example-microservice-infra.outputs.log_group_name
 
   tags = {
     env       = "dev"
@@ -59,11 +59,11 @@ module "prod" {
 
   # Existing infrastructure
   aws_region       = "us-east-1"
-  vpc_id           = data.terraform_remote_state.aws-example-network-prod-us-east-1.outputs.vpc_id
-  public_subnets   = data.terraform_remote_state.aws-example-network-prod-us-east-1.outputs.private_subnets
-  private_subnets  = data.terraform_remote_state.aws-example-network-prod-us-east-1.outputs.public_subnets
-  ecs_cluster_name = data.terraform_remote_state.aws-example-microservice-infra-prod-us-east-1.outputs.ecs_cluster_name
-  log_group_name   = data.terraform_remote_state.aws-example-microservice-infra-prod-us-east-1.outputs.log_group_name
+  vpc_id           = data.terraform_remote_state.aws-example-network.outputs.vpc_id
+  public_subnets   = data.terraform_remote_state.aws-example-network.outputs.private_subnets
+  private_subnets  = data.terraform_remote_state.aws-example-network.outputs.public_subnets
+  ecs_cluster_name = data.terraform_remote_state.aws-example-microservice-infra.outputs.ecs_cluster_name
+  log_group_name   = data.terraform_remote_state.aws-example-microservice-infra.outputs.log_group_name
 
   tags = {
     env       = "prod"
