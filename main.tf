@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = "us-west-1"
 }
 
 
@@ -27,7 +27,7 @@ module "dev" {
   create_ecr   = false # Prod creates the ecr registry
 
   # Existing infrastructure
-  aws_region       = "us-east-1"
+  aws_region       = "us-west-1"
   vpc_id           = data.terraform_remote_state.aws-example-network.outputs.vpc_id
   public_subnets   = data.terraform_remote_state.aws-example-network.outputs.private_subnets
   private_subnets  = data.terraform_remote_state.aws-example-network.outputs.public_subnets
